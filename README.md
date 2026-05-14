@@ -16,7 +16,7 @@ DSA/
 ├── Arrays/
 ├── Strings/
 ├── Hashing/
-├── Two-Pointers/
+├── TwoPointers/
 ├── Sliding-Window/
 ├── Prefix-Sum/
 ├── Binary-Search/
@@ -38,6 +38,8 @@ DSA/
 ├── Math/
 └── Matrix/
 ```
+
+Folder names now reflect the current repository structure exactly.
 
 Problems are grouped by the pattern or technique they primarily use.
 
