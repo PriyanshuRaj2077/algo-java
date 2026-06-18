@@ -5,9 +5,11 @@
     <bean id = "dev"  class = "org.example.Dev">
         <!-- injecting a value by property keyword -->
 <!--        <property name="age" value="12"/>-->
-        <constructor-arg value="14" />
+<!--        <constructor-arg value="14" />-->
+<!--        <property name="laptop" ref="lap1"/>-->
+            <property name="comp" ref="lap1"/>
     </bean>
-    <bean id = "laptop"  class = "org.example.Laptop">
+    <bean id = "lap1"  class = "org.example.Laptop">
 
     </bean>
 

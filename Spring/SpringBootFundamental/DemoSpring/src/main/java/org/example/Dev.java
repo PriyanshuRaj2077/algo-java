@@ -2,25 +2,47 @@ package org.example;
 
 public class Dev {
 
-    private int age = 4;
+   // private Laptop laptop;
+    private Computer comp;
+//    private int age = 4;
+
+
     public Dev(){
         System.out.println("dev constructor");
     }
 
-    public int getAge() {
-        return age;
+//    public int getAge() {
+//        return age;
+//    }
+//
+//    public void setAge(int age) {
+//        this.age = age;
+//    }
+
+//    public Computer getComputer() {
+//        return comp;
+//    }
+//
+//    public void setComputer(Computer comp) {
+//        this.comp = comp;
+//    }
+
+    public Computer getComp() {
+        return comp;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setComp(Computer comp) {
+        this.comp = comp;
     }
 
-    public Dev(int age) {
-        this.age = age;
-        System.out.println("dev 1 constructor");
-    }
+
+//    public Dev(int age) {
+//        this.age = age;
+//        System.out.println("dev 1 constructor");
+//    }
 
     public void Build() {
         System.out.println("working on a project");
+        comp.compile();
     }
 }
