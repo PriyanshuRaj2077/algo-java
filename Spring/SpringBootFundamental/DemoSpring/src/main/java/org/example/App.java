@@ -10,7 +10,7 @@ public class App{
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
         Dev obj = (Dev)context.getBean(Dev.class);
         obj.Build();
-//        obj.setAge(34);
+//        obj.setAge(34); so finally i can code over it without any issue okj
 //        System.out.println(obj.getAge());
     }
 }

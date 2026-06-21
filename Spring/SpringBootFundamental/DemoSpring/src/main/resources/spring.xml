@@ -7,9 +7,14 @@
 <!--        <property name="age" value="12"/>-->
 <!--        <constructor-arg value="14" />-->
 <!--        <property name="laptop" ref="lap1"/>-->
-            <property name="comp" ref="lap1"/>
+            <property name="comp" ref="laptopBean"/>
+<!--        "Inject the bean named laptopBean into the comp property of dev."-->
     </bean>
-    <bean id = "lap1"  class = "org.example.Laptop">
+    <bean id = "laptopBean"  class = "org.example.Laptop">
+
+    </bean>
+
+    <bean id = "des1"  class = "org.example.Desktop">
 
     </bean>
 

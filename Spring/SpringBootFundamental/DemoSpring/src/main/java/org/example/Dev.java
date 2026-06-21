@@ -31,8 +31,10 @@ public class Dev {
         return comp;
     }
 
-    public void setComp(Computer comp) {
-        this.comp = comp;
+    public void setComp(Computer laptopObj) {
+        //"When someone calls this
+        // method, they must give me an object that is a Computer."
+        this.comp = laptopObj;
     }
 
 
