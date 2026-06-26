@@ -2,19 +2,19 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id = "dev"  class = "org.example.Dev">
+    <bean id = "dev"  class = "org.example.Dev" autowire="byType">
         <!-- injecting a value by property keyword -->
 <!--        <property name="age" value="12"/>-->
 <!--        <constructor-arg value="14" />-->
 <!--        <property name="laptop" ref="lap1"/>-->
-            <property name="comp" ref="laptopBean"/>
+<!--            <property name="comp" ref="laptopBean"/>-->
 <!--        "Inject the bean named laptopBean into the comp property of dev."-->
     </bean>
     <bean id = "laptopBean"  class = "org.example.Laptop">
 
     </bean>
 
-    <bean id = "des1"  class = "org.example.Desktop">
+    <bean id = "des1"  class = "org.example.Desktop" primary="true">
 
     </bean>
 
