@@ -36,7 +36,7 @@ public class ProductController {
     }
     @PostMapping("/product")
     public ResponseEntity<?> addProduct(@RequestPart Product product,
-                                        @RequestPart MultipartFile imageFiles ){
+                                        @RequestPart MultipartFile imageFile ){
         try {
             Product product1 = service.addProduct(product,imageFile);
             return new ResponseEntity<>(product1, HttpStatus.CREATED);
@@ -44,6 +44,14 @@ public class ProductController {
         catch(Exception e){
             return new ResponseEntity<>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
         }
+    }
+
+    @GetMapping("product/${productId}/image")
+    private ResponseEntity<byte>[]> getImageByProductId(@PathVariable int productId){
+        Product product = service.getProductById(productId);
+        byte[] imageFile = product.getImageDate();
+
+        return
     }
 
 }
