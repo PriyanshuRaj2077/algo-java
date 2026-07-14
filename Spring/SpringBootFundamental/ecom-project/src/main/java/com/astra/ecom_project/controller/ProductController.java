@@ -5,10 +5,12 @@ import com.astra.ecom_project.model.Product;
 import com.astra.ecom_project.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -46,12 +48,28 @@ public class ProductController {
         }
     }
 
-    @GetMapping("product/${productId}/image")
-    private ResponseEntity<byte>[]> getImageByProductId(@PathVariable int productId){
+    @GetMapping("product/{productId}/image")
+    private ResponseEntity<byte[]> getImageByProductId(@PathVariable int productId){
         Product product = service.getProductById(productId);
-        byte[] imageFile = product.getImageDate();
+        byte[] imageFile = product.getImageData();
 
-        return
+        return ResponseEntity.ok()
+                .contentType(MediaType.valueOf(product.getImageType()))
+                .body(imageFile);
+    }
+    @PutMapping("/product/")
+    public ResponseEntity<String> updateProduct(@PathVariable int id, @RequestPart Product product,
+                                                @RequestPart MultipartFile imageFile){
+        Product product1 = null;
+        try {
+            product1 = service.updateProduct(id , product, imageFile);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        if(product1 != null)
+            return new ResponseEntity<>("Updated",HttpStatus.OK);
+        else
+            return new ResponseEntity<>("Failed to update",HttpStatus.BAD_REQUEST);
     }
 
 }
